@@ -1,7 +1,7 @@
-import { environment } from './../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from "@angular/router";
+import { environment } from './../../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,6 @@ export class ProdutoService {
   }
 
   public selecionarProduto(codigo: Number) {
-    // return this.httpClient.get(this.URL_SERVER_API.concat(`produto/${codigo}`));
     return this.router.navigate(["/produto", codigo]).then();
   }
 

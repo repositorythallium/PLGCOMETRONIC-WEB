@@ -59,16 +59,15 @@
                   <h6>{{produto.DESCRICAO.substr(0, 40)}} ....</h6>
                   <p class="lead">{{produto.PRECO | currency:'R$ '}}</p>
                 </div>
-  
                 <div class="row d-flex justify-content-center border-primary my-3">
-                  <!-- <div class="col-md-6 ">
-                    <button class="btn btn-outline-primary btn-sm btn-block"
-                            [class.disabled]="produto.QUANTIDADE_ITEM < 1"
-                            [class.btn-outline-danger]="produto.QUANTIDADE_ITEM < 1"
-                            (click)="AddProduct(produto.codigo)" [disabled]="produto.QUANTIDADE_ITEM < 1">
-                      {{ produto.QUANTIDADE_ITEM < 1 ? "NO STOCK" : "Add To Cart"}}
+                  <div class="col-md-6 ">
+                    <button class="btn btn-primary btn-sm btn-block"
+                            [class.disabled]="produto.QUANTIDADE_DISPONIVEL < 1"
+                            [class.btn-outline-danger]="produto.QUANTIDADE_DISPONIVEL < 1"
+                            (click)="adicionarProduto(produto.codigo)" [disabled]="produto.QUANTIDADE_DISPONIVEL < 1">
+                      {{ produto.QUANTIDADE_DISPONIVEL < 1 ? "Sem Estoque" : "Adicionar ao Carrinho"}}
                     </button>
-                  </div> -->
+                  </div>
                 </div>
               </div>
             </div>

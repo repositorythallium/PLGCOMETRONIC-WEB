@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProdutoService } from './../../service/produto.service';
+import { ProdutoService } from 'src/app/service/produto.service';
+import { ProdutoModel, ServerResponse } from './../../model/produto.model';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { ProdutoService } from './../../service/produto.service';
 })
 export class HomeComponent implements OnInit {
 
-  public produtoList: any[] = [];
+  public produtoList: ProdutoModel[] = [];
 
   constructor(private produtoService : ProdutoService) { }
 
@@ -17,13 +18,18 @@ export class HomeComponent implements OnInit {
   }
 
   public recuperarProduto() {
-    this.produtoService.recuperarProduto().subscribe((produto: { produtoList: any[] }) => {
-      this.produtoList = produto.produtoList;
+    this.produtoService.recuperarProduto().subscribe((produtoResult: ServerResponse) => {
+      this.produtoList = produtoResult.produtoList;
+      console.log(this.produtoList);
     });
   }
 
   public selecionarProduto(codigo: Number) {
     this.produtoService.selecionarProduto(codigo);
+  }
+
+  public adicionarProduto(codigo: Number) {
+    console.log("ADICIONAR PRODUTO!");
   }
 
  }
