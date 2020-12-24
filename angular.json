@@ -52,7 +52,13 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/jquery.min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/slick.min.js",
+              "src/assets/js/nouislider.min.js",
+              "src/assets/js/jquery.zoom.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -145,6 +151,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PLGECOMMERCEWEB"
+    }
+  },
+  "defaultProject": "PLGECOMMERCEWEB",
+  "cli": {
+    "analytics": "ecfb49c5-2de7-4922-822e-8d9cee1201a9"
+  }
 }
